@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: Agendar un destino de viaje
+-------------------------------------------------------------------------------
+Tests run: 4, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 111.8 s -- in Agendar un destino de viaje
