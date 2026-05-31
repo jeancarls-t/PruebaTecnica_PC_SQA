@@ -34,16 +34,17 @@ public class BookDestinationSteps {
         WebDriverManager.chromedriver().setup();
         ChromeOptions options = new ChromeOptions();
         options.addArguments("--remote-allow-origins=*");
-        options.addArguments("--start-maximized");
 
-        // Detectar si está en CI (GitHub Actions)
+        // Configuración para CI (GitHub Actions)
         if (System.getenv("CI") != null) {
-            options.addArguments("--headless");
+            options.addArguments("--headless=new");
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
             options.addArguments("--disable-gpu");
             options.addArguments("--window-size=1920,1080");
-            System.out.println("✅ Ejecutando en modo headless (CI)");
+            System.out.println("✅ Modo headless activado para CI");
+        } else {
+            options.addArguments("--start-maximized");
         }
 
         driver = new ChromeDriver(options);
